@@ -1,5 +1,5 @@
 //
-//  FourthViewController.swift
+//  FunFactViewController.swift
 //  CHaRM
 //
 //  Created by Pranay Kumar on 1/10/19.
@@ -8,7 +8,12 @@
 
 import UIKit
 
-class FourthViewController: UIViewController {
+class FunFactViewController: UIViewController {
+    
+    @IBAction func newFactAction(sender: UIButton) {
+//        println"hello"
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
