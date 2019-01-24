@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23FD059804CD818742B3FBB4 /* Pods_CHaRM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AA030FA9C35D71CF1C06DA /* Pods_CHaRM.framework */; };
+		3A181D7021EA7EE9001CCAB4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A181D6F21EA7EE9001CCAB4 /* LoginViewController.swift */; };
+		3A9C976A21EFB15600FD74FB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C976921EFB15600FD74FB /* SignUpViewController.swift */; };
 		3AC3022E21E8280000F9F96C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC3022D21E8280000F9F96C /* AppDelegate.swift */; };
 		3AC3023021E8280000F9F96C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC3022F21E8280000F9F96C /* FirstViewController.swift */; };
 		3AC3023221E8280000F9F96C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC3023121E8280000F9F96C /* SecondViewController.swift */; };
@@ -17,6 +20,9 @@
 		3AC3025021E8280100F9F96C /* CHaRMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC3024F21E8280100F9F96C /* CHaRMUITests.swift */; };
 		3AC3026021E82A9500F9F96C /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC3025F21E82A9500F9F96C /* FourthViewController.swift */; };
 		3AC3026221E835B400F9F96C /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC3026121E835B400F9F96C /* FifthViewController.swift */; };
+		3AE9774721F0429D00932B57 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AE9774621F0429D00932B57 /* GoogleService-Info.plist */; };
+		B6A7562C649D6382498155F2 /* Pods_CHaRMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4C1CDDBD8AEE9CCE272927 /* Pods_CHaRMTests.framework */; };
+		F4CBC108C2407E76D86DEE07 /* Pods_CHaRMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 851F2E2A0A899B837DAAD952 /* Pods_CHaRMUITests.framework */; };
 		510053C521EFE1AC00C56AB9 /* StoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510053C421EFE1AC00C56AB9 /* StoriesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,8 +43,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3AD4B4AA21F054A2005E5DF3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		3AC3022A21E8280000F9F96C /* CHaRM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHaRM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E6B90DF2FD6965E63B1AF0D /* Pods-CHaRM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHaRM.release.xcconfig"; path = "Pods/Target Support Files/Pods-CHaRM/Pods-CHaRM.release.xcconfig"; sourceTree = "<group>"; };
+		34D713D4583F9D7DBD4711EB /* Pods-CHaRMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHaRMUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CHaRMUITests/Pods-CHaRMUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3A181D6F21EA7EE9001CCAB4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3A9C976921EFB15600FD74FB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3AC3022D21E8280000F9F96C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AC3022F21E8280000F9F96C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		3AC3023121E8280000F9F96C /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
@@ -46,14 +68,23 @@
 		3AC3023621E8280100F9F96C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AC3023921E8280100F9F96C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AC3023B21E8280100F9F96C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3AC3024021E8280100F9F96C /* CHaRMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHaRMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AC3024421E8280100F9F96C /* CHaRMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHaRMTests.swift; sourceTree = "<group>"; };
 		3AC3024621E8280100F9F96C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3AC3024B21E8280100F9F96C /* CHaRMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHaRMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AC3024F21E8280100F9F96C /* CHaRMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHaRMUITests.swift; sourceTree = "<group>"; };
 		3AC3025121E8280100F9F96C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AC3025F21E82A9500F9F96C /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		3AC3026121E835B400F9F96C /* FifthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
+		3AD2ECB221F056930055329A /* CHaRMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CHaRMUITests.xctest; path = "/Users/pkumar/Desktop/CHaRM/CHaRM/build/Debug-iphoneos/CHaRMUITests.xctest"; sourceTree = "<absolute>"; };
+		3AD2ECB321F056930055329A /* CHaRMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CHaRMTests.xctest; path = "/Users/pkumar/Desktop/CHaRM/CHaRM/build/Debug-iphoneos/CHaRMTests.xctest"; sourceTree = "<absolute>"; };
+		3AD2ECB421F056930055329A /* CHaRM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = CHaRM.app; path = "/Users/pkumar/Desktop/CHaRM/CHaRM/build/Debug-iphoneos/CHaRM.app"; sourceTree = "<absolute>"; };
+		3AE9774621F0429D00932B57 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4ECDFCB6C03E50893F4D8518 /* Pods-CHaRM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHaRM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CHaRM/Pods-CHaRM.debug.xcconfig"; sourceTree = "<group>"; };
+		51C8AFFA2171D59F0147FF9D /* Pods-CHaRMTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHaRMTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CHaRMTests/Pods-CHaRMTests.debug.xcconfig"; sourceTree = "<group>"; };
+		851F2E2A0A899B837DAAD952 /* Pods_CHaRMUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CHaRMUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AED92282B2CDA6D32D0C35B1 /* Pods-CHaRMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHaRMTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CHaRMTests/Pods-CHaRMTests.release.xcconfig"; sourceTree = "<group>"; };
+		C0AA030FA9C35D71CF1C06DA /* Pods_CHaRM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CHaRM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E72FCB94048230F34774453C /* Pods-CHaRMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHaRMUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CHaRMUITests/Pods-CHaRMUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EB4C1CDDBD8AEE9CCE272927 /* Pods_CHaRMTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CHaRMTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		510053C421EFE1AC00C56AB9 /* StoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23FD059804CD818742B3FBB4 /* Pods_CHaRM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6A7562C649D6382498155F2 /* Pods_CHaRMTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,30 +109,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4CBC108C2407E76D86DEE07 /* Pods_CHaRMUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33B6ADD842D1E8B60FE8416B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4ECDFCB6C03E50893F4D8518 /* Pods-CHaRM.debug.xcconfig */,
+				1E6B90DF2FD6965E63B1AF0D /* Pods-CHaRM.release.xcconfig */,
+				51C8AFFA2171D59F0147FF9D /* Pods-CHaRMTests.debug.xcconfig */,
+				AED92282B2CDA6D32D0C35B1 /* Pods-CHaRMTests.release.xcconfig */,
+				34D713D4583F9D7DBD4711EB /* Pods-CHaRMUITests.debug.xcconfig */,
+				E72FCB94048230F34774453C /* Pods-CHaRMUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3AC3022121E8280000F9F96C = {
 			isa = PBXGroup;
 			children = (
 				3AC3022C21E8280000F9F96C /* CHaRM */,
 				3AC3024321E8280100F9F96C /* CHaRMTests */,
 				3AC3024E21E8280100F9F96C /* CHaRMUITests */,
-				3AC3022B21E8280000F9F96C /* Products */,
+				33B6ADD842D1E8B60FE8416B /* Pods */,
+				9EBC2DE2B45C36CFD991108F /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		3AC3022B21E8280000F9F96C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3AC3022A21E8280000F9F96C /* CHaRM.app */,
-				3AC3024021E8280100F9F96C /* CHaRMTests.xctest */,
-				3AC3024B21E8280100F9F96C /* CHaRMUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		3AC3022C21E8280000F9F96C /* CHaRM */ = {
@@ -112,6 +150,11 @@
 				3AC3023621E8280100F9F96C /* Assets.xcassets */,
 				3AC3023821E8280100F9F96C /* LaunchScreen.storyboard */,
 				3AC3023B21E8280100F9F96C /* Info.plist */,
+				3AE9774621F0429D00932B57 /* GoogleService-Info.plist */,
+				3AC3025F21E82A9500F9F96C /* FourthViewController.swift */,
+				3AC3026121E835B400F9F96C /* FifthViewController.swift */,
+				3A181D6F21EA7EE9001CCAB4 /* LoginViewController.swift */,
+				3A9C976921EFB15600FD74FB /* SignUpViewController.swift */,
 				3AC3025F21E82A9500F9F96C /* FourthViewController.swift */,
 				3AC3026121E835B400F9F96C /* FifthViewController.swift */,
 				510053C421EFE1AC00C56AB9 /* StoriesTableViewController.swift */,
@@ -137,6 +180,16 @@
 			path = CHaRMUITests;
 			sourceTree = "<group>";
 		};
+		9EBC2DE2B45C36CFD991108F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0AA030FA9C35D71CF1C06DA /* Pods_CHaRM.framework */,
+				EB4C1CDDBD8AEE9CCE272927 /* Pods_CHaRMTests.framework */,
+				851F2E2A0A899B837DAAD952 /* Pods_CHaRMUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +197,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3AC3025421E8280100F9F96C /* Build configuration list for PBXNativeTarget "CHaRM" */;
 			buildPhases = (
+				275647B351CC41BC700B6B69 /* [CP] Check Pods Manifest.lock */,
 				3AC3022621E8280000F9F96C /* Sources */,
 				3AC3022721E8280000F9F96C /* Frameworks */,
 				3AC3022821E8280000F9F96C /* Resources */,
+				6764A18FB2929CC81206F5C0 /* [CP] Embed Pods Frameworks */,
+				3AD4B4AA21F054A2005E5DF3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,13 +210,14 @@
 			);
 			name = CHaRM;
 			productName = CHaRM;
-			productReference = 3AC3022A21E8280000F9F96C /* CHaRM.app */;
+			productReference = 3AD2ECB421F056930055329A /* CHaRM.app */;
 			productType = "com.apple.product-type.application";
 		};
 		3AC3023F21E8280100F9F96C /* CHaRMTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3AC3025721E8280100F9F96C /* Build configuration list for PBXNativeTarget "CHaRMTests" */;
 			buildPhases = (
+				9867650F035BBA1E625F346B /* [CP] Check Pods Manifest.lock */,
 				3AC3023C21E8280100F9F96C /* Sources */,
 				3AC3023D21E8280100F9F96C /* Frameworks */,
 				3AC3023E21E8280100F9F96C /* Resources */,
@@ -172,13 +229,14 @@
 			);
 			name = CHaRMTests;
 			productName = CHaRMTests;
-			productReference = 3AC3024021E8280100F9F96C /* CHaRMTests.xctest */;
+			productReference = 3AD2ECB321F056930055329A /* CHaRMTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		3AC3024A21E8280100F9F96C /* CHaRMUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3AC3025A21E8280100F9F96C /* Build configuration list for PBXNativeTarget "CHaRMUITests" */;
 			buildPhases = (
+				E62B004949A025AD4D56775D /* [CP] Check Pods Manifest.lock */,
 				3AC3024721E8280100F9F96C /* Sources */,
 				3AC3024821E8280100F9F96C /* Frameworks */,
 				3AC3024921E8280100F9F96C /* Resources */,
@@ -190,7 +248,7 @@
 			);
 			name = CHaRMUITests;
 			productName = CHaRMUITests;
-			productReference = 3AC3024B21E8280100F9F96C /* CHaRMUITests.xctest */;
+			productReference = 3AD2ECB221F056930055329A /* CHaRMUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -225,7 +283,7 @@
 				Base,
 			);
 			mainGroup = 3AC3022121E8280000F9F96C;
-			productRefGroup = 3AC3022B21E8280000F9F96C /* Products */;
+			productRefGroup = 3AC3022121E8280000F9F96C;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -242,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AC3023A21E8280100F9F96C /* LaunchScreen.storyboard in Resources */,
+				3AE9774721F0429D00932B57 /* GoogleService-Info.plist in Resources */,
 				3AC3023721E8280100F9F96C /* Assets.xcassets in Resources */,
 				3AC3023521E8280000F9F96C /* Main.storyboard in Resources */,
 			);
@@ -263,13 +322,110 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		275647B351CC41BC700B6B69 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CHaRM-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6764A18FB2929CC81206F5C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CHaRM/Pods-CHaRM-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CHaRM/Pods-CHaRM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9867650F035BBA1E625F346B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CHaRMTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E62B004949A025AD4D56775D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CHaRMUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3AC3022621E8280000F9F96C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A181D7021EA7EE9001CCAB4 /* LoginViewController.swift in Sources */,
 				510053C521EFE1AC00C56AB9 /* StoriesTableViewController.swift in Sources */,
 				3AC3026221E835B400F9F96C /* FifthViewController.swift in Sources */,
+				3A9C976A21EFB15600FD74FB /* SignUpViewController.swift in Sources */,
 				3AC3023221E8280000F9F96C /* SecondViewController.swift in Sources */,
 				3AC3022E21E8280000F9F96C /* AppDelegate.swift in Sources */,
 				3AC3023021E8280000F9F96C /* FirstViewController.swift in Sources */,
@@ -446,6 +602,7 @@
 		};
 		3AC3025521E8280100F9F96C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4ECDFCB6C03E50893F4D8518 /* Pods-CHaRM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -464,6 +621,7 @@
 		};
 		3AC3025621E8280100F9F96C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E6B90DF2FD6965E63B1AF0D /* Pods-CHaRM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -482,6 +640,7 @@
 		};
 		3AC3025821E8280100F9F96C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51C8AFFA2171D59F0147FF9D /* Pods-CHaRMTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -502,6 +661,7 @@
 		};
 		3AC3025921E8280100F9F96C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AED92282B2CDA6D32D0C35B1 /* Pods-CHaRMTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -522,6 +682,7 @@
 		};
 		3AC3025B21E8280100F9F96C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34D713D4583F9D7DBD4711EB /* Pods-CHaRMUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -541,6 +702,7 @@
 		};
 		3AC3025C21E8280100F9F96C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E72FCB94048230F34774453C /* Pods-CHaRMUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
