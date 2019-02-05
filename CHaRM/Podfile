@@ -8,6 +8,7 @@ target 'CHaRM' do
   # Pods for CHaRM
   pod 'Firebase/Core'
   pod ‘Firebase/Auth’
+  pod 'Firebase/Database'
 
   target 'CHaRMTests' do
     inherit! :search_paths

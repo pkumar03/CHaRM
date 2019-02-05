@@ -7,14 +7,31 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseCore
 
 class StoriesTableViewController: UITableViewController {
 
+    var zipCodeRef: DatabaseReference!
+    
+    @IBOutlet weak var zipCode: UITextField!
+    @IBAction func submitButton(_ sender: Any) {
+        addZipCode()
+    }
+    
+    func addZipCode() {
+        let key = zipCodeRef.childByAutoId().key
+        let zip = ["id": key, "userZip": zipCode.text! as String]
+        
+        zipCodeRef.child(key!).setValue(zip) //Aborts execution if zip is null
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.allowsMultipleSelectionDuringEditing = true
         tableView.setEditing(true, animated: false)
-
+        zipCodeRef = Database.database().reference(withPath:"zipcode")
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
