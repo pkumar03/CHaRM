@@ -123,6 +123,12 @@ class StoriesTableViewController: UITableViewController {
             return "Items for ReUse (No Fee)"
         }
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(self.itemList[indexPath.row].title)
+        //        let selected = itemList[indexPath.row]
+        //        print selected
+    }
  
 
     /*
