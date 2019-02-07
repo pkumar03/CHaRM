@@ -50,41 +50,41 @@ class StoriesTableViewController: UITableViewController {
     }
     
     var itemList = [
-        Recyclable(id: 1, title: "Paint", text: "Latex and Oil Based\n(First fifty pounds are free each additional pound is $.25.)"),
-        Recyclable(id: 2, title: "Household Chemicals", text: "pesticides, herbicides, household cleaners, etc."),
-        Recyclable(id: 3, title: "Electronics", text: "TV’s must be intact.Electronics include all items that required electricity"),
-        Recyclable(id: 4, title: "Tires", text:""),
-        Recyclable(id: 5, title: "Mattresses", text:""),
-        Recyclable(id: 6, title: "Propane Tanks", text:""),
-        Recyclable(id: 7, title: "Large Appliances", text: "Refrigerators, Stoves, Dishwashers , Dehumidifiers, AC units"),
-        Recyclable(id: 8, title: "Thermometers", text: ""),
-        Recyclable(id: 9, title: "Smoke Detectors", text: ""),
-        Recyclable(id: 10, title: "Bulbs", text: ""),
-        Recyclable(id: 11, title: "CFL Bulbs", text: ""),
-        Recyclable(id: 12, title: "Toilets", text: "Seats and all hardware must be removed"),
-        Recyclable(id: 13, title: "Plastics/clean, dry, empty plastic bags/ film packaging/grocery bags", text: ""),
-        Recyclable(id: 14, title: "Plastic food containers", text: "#1-#2-#5, clean and dry"),
-        Recyclable(id: 15, title: "Paper", text: "magazines/office paper/newspaper/phone books"),
-        Recyclable(id: 16, title: "Glass bottles and jars", text: "food grade only"),
-        Recyclable(id: 17, title: "Metal", text: "steel, iron, brass, aluminum, or copper"),
-        Recyclable(id: 18, title: "Aluminum Cans", text: ""),
-        Recyclable(id: 19, title: "Cardboard", text: ""),
-        Recyclable(id: 20, title: "Ink Printer Cartridges", text: "no toner"),
-        Recyclable(id: 21, title: "Textiles", text: ""),
-        Recyclable(id: 22, title: "Styrofoam", text: "please wash"),
-        Recyclable(id: 23, title: "Batteries", text: "Zinc Carbon, Button, Lithium, Rechargeable, Car"),
-        Recyclable(id: 24, title: "Household fats/oil/grease", text: ""),
-        Recyclable(id: 25, title: "Waxed Cartons", text: "Broth, Milk, Juice"),
-        Recyclable(id: 26, title: "Wine Corks", text: ""),
-        Recyclable(id: 27, title: "Political signs", text: ""),
-        Recyclable(id: 28, title: "Books", text: ""),
-        Recyclable(id: 29, title: "Musical Instruments", text: ""),
-        Recyclable(id: 30, title: "Sports equiptment", text: ""),
-        Recyclable(id: 31, title: "Bikes", text: ""),
-        Recyclable(id: 32, title: "Textiles", text: ""),
-        Recyclable(id: 33, title: "Furniture in usable condition", text: "No Office Furniture"),
-        Recyclable(id: 34, title: "Household items in usable condition", text: ""),
-        Recyclable(id: 30, title: "Clothing", text: ""),
+        Recyclable(id: 1, section: 0, title: "Paint", text: "Latex and Oil Based\n(First fifty pounds are free each additional pound is $.25.)"),
+        Recyclable(id: 2, section: 0, title: "Household Chemicals", text: "pesticides, herbicides, household cleaners, etc."),
+        Recyclable(id: 3, section: 0, title: "Electronics", text: "TV’s must be intact.Electronics include all items that required electricity"),
+        Recyclable(id: 4, section: 0, title: "Tires", text:""),
+        Recyclable(id: 5, section: 0, title: "Mattresses", text:""),
+        Recyclable(id: 6, section: 0, title: "Propane Tanks", text:""),
+        Recyclable(id: 7, section: 0, title: "Large Appliances", text: "Refrigerators, Stoves, Dishwashers , Dehumidifiers, AC units"),
+        Recyclable(id: 8, section: 0, title: "Thermometers", text: ""),
+        Recyclable(id: 9, section: 0, title: "Smoke Detectors", text: ""),
+        Recyclable(id: 10, section: 0, title: "Bulbs", text: ""),
+        Recyclable(id: 11, section: 0, title: "CFL Bulbs", text: ""),
+        Recyclable(id: 12, section: 0, title: "Toilets", text: "Seats and all hardware must be removed"),
+        Recyclable(id: 13, section: 1, title: "Plastics/clean, dry, empty plastic bags/ film packaging/grocery bags", text: ""),
+        Recyclable(id: 14, section: 1, title: "Plastic food containers", text: "#1-#2-#5, clean and dry"),
+        Recyclable(id: 15, section: 1, title: "Paper", text: "magazines/office paper/newspaper/phone books"),
+        Recyclable(id: 16, section: 1, title: "Glass bottles and jars", text: "food grade only"),
+        Recyclable(id: 17, section: 1, title: "Metal", text: "steel, iron, brass, aluminum, or copper"),
+        Recyclable(id: 18, section: 1, title: "Aluminum Cans", text: ""),
+        Recyclable(id: 19, section: 1, title: "Cardboard", text: ""),
+        Recyclable(id: 20, section: 1, title: "Ink Printer Cartridges", text: "no toner"),
+        Recyclable(id: 21, section: 1, title: "Textiles", text: ""),
+        Recyclable(id: 22, section: 1, title: "Styrofoam", text: "please wash"),
+        Recyclable(id: 23, section: 1, title: "Batteries", text: "Zinc Carbon, Button, Lithium, Rechargeable, Car"),
+        Recyclable(id: 24, section: 1, title: "Household fats/oil/grease", text: ""),
+        Recyclable(id: 25, section: 1, title: "Waxed Cartons", text: "Broth, Milk, Juice"),
+        Recyclable(id: 26, section: 1, title: "Wine Corks", text: ""),
+        Recyclable(id: 27, section: 1, title: "Political signs", text: ""),
+        Recyclable(id: 28, section: 2, title: "Books", text: ""),
+        Recyclable(id: 29, section: 2, title: "Musical Instruments", text: ""),
+        Recyclable(id: 30, section: 2, title: "Sports equiptment", text: ""),
+        Recyclable(id: 31, section: 2, title: "Bikes", text: ""),
+        Recyclable(id: 32, section: 2, title: "Textiles", text: ""),
+        Recyclable(id: 33, section: 2, title: "Furniture in usable condition", text: "No Office Furniture"),
+        Recyclable(id: 34, section: 2, title: "Household items in usable condition", text: ""),
+        Recyclable(id: 30, section: 2, title: "Clothing", text: ""),
     ]
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 3
@@ -103,9 +103,16 @@ class StoriesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
-
-        let item = itemList[indexPath.row]
-        print(indexPath.row)
+        let sectionNum = 0
+        if (itemList[indexPath].section == 0) {
+            sectionNum = 12
+        } else if (itemList[indexPath].section == 1) {
+            sectionNum = 16
+        } else {
+            sectionNum = 8
+        }
+        let item = itemList[indexPath.row + sectionNum]
+        print(indexPath.row + sectionNum)
         cell.textLabel?.text = item.title
         cell.detailTextLabel?.text = item.text
 
