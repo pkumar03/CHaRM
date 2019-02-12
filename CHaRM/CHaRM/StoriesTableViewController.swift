@@ -44,13 +44,14 @@ class StoriesTableViewController: UITableViewController {
     struct Recyclable {
         
         var id : Int
+        var section : Int
         var title : String
         var text : String
         
     }
     
     var itemList = [
-        Recyclable(id: 1, section: 0, title: "Paint", text: "Latex and Oil Based\n(First fifty pounds are free each additional pound is $.25.)"),
+        [Recyclable(id: 1, section: 0, title: "Paint", text: "Latex and Oil Based\n(First fifty pounds are free each additional pound is $.25.)"),
         Recyclable(id: 2, section: 0, title: "Household Chemicals", text: "pesticides, herbicides, household cleaners, etc."),
         Recyclable(id: 3, section: 0, title: "Electronics", text: "TV’s must be intact.Electronics include all items that required electricity"),
         Recyclable(id: 4, section: 0, title: "Tires", text:""),
@@ -61,8 +62,8 @@ class StoriesTableViewController: UITableViewController {
         Recyclable(id: 9, section: 0, title: "Smoke Detectors", text: ""),
         Recyclable(id: 10, section: 0, title: "Bulbs", text: ""),
         Recyclable(id: 11, section: 0, title: "CFL Bulbs", text: ""),
-        Recyclable(id: 12, section: 0, title: "Toilets", text: "Seats and all hardware must be removed"),
-        Recyclable(id: 13, section: 1, title: "Plastics/clean, dry, empty plastic bags/ film packaging/grocery bags", text: ""),
+        Recyclable(id: 12, section: 0, title: "Toilets", text: "Seats and all hardware must be removed")],
+        [Recyclable(id: 13, section: 1, title: "Plastics/clean, dry, empty plastic bags/ film packaging/grocery bags", text: ""),
         Recyclable(id: 14, section: 1, title: "Plastic food containers", text: "#1-#2-#5, clean and dry"),
         Recyclable(id: 15, section: 1, title: "Paper", text: "magazines/office paper/newspaper/phone books"),
         Recyclable(id: 16, section: 1, title: "Glass bottles and jars", text: "food grade only"),
@@ -76,15 +77,15 @@ class StoriesTableViewController: UITableViewController {
         Recyclable(id: 24, section: 1, title: "Household fats/oil/grease", text: ""),
         Recyclable(id: 25, section: 1, title: "Waxed Cartons", text: "Broth, Milk, Juice"),
         Recyclable(id: 26, section: 1, title: "Wine Corks", text: ""),
-        Recyclable(id: 27, section: 1, title: "Political signs", text: ""),
-        Recyclable(id: 28, section: 2, title: "Books", text: ""),
+        Recyclable(id: 27, section: 1, title: "Political signs", text: "")],
+        [Recyclable(id: 28, section: 2, title: "Books", text: ""),
         Recyclable(id: 29, section: 2, title: "Musical Instruments", text: ""),
         Recyclable(id: 30, section: 2, title: "Sports equiptment", text: ""),
         Recyclable(id: 31, section: 2, title: "Bikes", text: ""),
         Recyclable(id: 32, section: 2, title: "Textiles", text: ""),
         Recyclable(id: 33, section: 2, title: "Furniture in usable condition", text: "No Office Furniture"),
         Recyclable(id: 34, section: 2, title: "Household items in usable condition", text: ""),
-        Recyclable(id: 30, section: 2, title: "Clothing", text: ""),
+        Recyclable(id: 30, section: 2, title: "Clothing", text: "")],
     ]
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 3
@@ -94,7 +95,7 @@ class StoriesTableViewController: UITableViewController {
         if section == 0 {
             return 12
         } else if section == 1 {
-            return 16
+            return 15
         } else {
             return 8
         }
@@ -103,20 +104,11 @@ class StoriesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
-        let sectionNum = 0
-        if (itemList[indexPath].section == 0) {
-            sectionNum = 12
-        } else if (itemList[indexPath].section == 1) {
-            sectionNum = 16
-        } else {
-            sectionNum = 8
-        }
-        let item = itemList[indexPath.row + sectionNum]
-        print(indexPath.row + sectionNum)
-        cell.textLabel?.text = item.title
-        cell.detailTextLabel?.text = item.text
-
+        print(itemList[indexPath.section][indexPath.row].title)
+        cell.textLabel?.text = itemList[indexPath.section][indexPath.row].title
+        cell.detailTextLabel?.text = itemList[indexPath.section][indexPath.row].text
         return cell
+        
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -132,7 +124,7 @@ class StoriesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(self.itemList[indexPath.row].title)
+        print(self.itemList[indexPath.section][indexPath.row].title)
         //        let selected = itemList[indexPath.row]
         //        print selected
     }
