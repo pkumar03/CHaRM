@@ -297,8 +297,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fact about recycling" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A45-jF-EJE">
-                                <rect key="frame" x="120" y="251" width="135" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fact about recycling" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A45-jF-EJE">
+                                <rect key="frame" x="79" y="251" width="217" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
@@ -312,9 +312,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owO-vP-ZEJ">
-                                <rect key="frame" x="164" y="299" width="46" height="30"/>
+                                <rect key="frame" x="153" y="295" width="69" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="New Fact!"/>
+                                <connections>
+                                    <action selector="button:" destination="FhF-fT-fgS" eventType="touchUpInside" id="oi8-eQ-b1R"/>
+                                    <action selector="buttonWasTapped:" destination="FhF-fT-fgS" eventType="touchUpInside" id="AEg-J3-2t8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -328,6 +332,9 @@
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="fact" destination="A45-jF-EJE" id="7kg-h4-qyR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bBZ-Ks-zEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="etM-gb-2Eb"/>
@@ -520,6 +527,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PRp-wP-P0B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1600.8" y="-781.25937031484261"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="S1Y-pc-daA">
@@ -534,6 +542,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EgW-JU-xMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-174" y="-815"/>
         </scene>
     </scenes>
     <resources>
@@ -544,6 +553,6 @@
         <image name="recyleIcon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KdT-AJ-9pG"/>
+        <segue reference="wRK-o4-aBC"/>
     </inferredMetricsTieBreakers>
 </document>
