@@ -13,25 +13,59 @@ import FirebaseCore
 class StoriesTableViewController: UITableViewController {
 
     var zipCodeRef: DatabaseReference!
+    var materialRef: DatabaseReference!
+    var currentMaterial = ""
+    var updatedInt = 0
+    
     
     @IBOutlet weak var zipCode: UITextField!
+    
+    
     @IBAction func submitButton(_ sender: Any) {
         addZipCode()
+        addMaterials()
     }
     
     func addZipCode() {
         let key = zipCodeRef.childByAutoId().key
-        let zip = ["id": key, "userZip": zipCode.text! as String]
+        let zip = ["id": key as Any, "userZip": zipCode.text! as String]
         
         zipCodeRef.child(key!).setValue(zip) //Aborts execution if zip is null
     }
+    
+    func addMaterials() {
+//        let key = zipCodeRef.childByAutoId().key
+//        let name = str
+//        let number = 3
+//        let materials = ["id": name, "Materials": number] as [String : Any]
+//
+//        materialRef.child(key!).setValue(materials)
+        _ = Database.database().reference().root.child("Materials Brought").child(currentMaterial).observeSingleEvent(of: .value) { (DataSnapshot) in
+            let valToUpdate = DataSnapshot.value as? NSNumber
+            print("value to update is: ", valToUpdate?.intValue as Any)
+            self.updatedInt = (valToUpdate?.intValue)! //aborts if value is nil fix during code review if needed also hi
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            print("updated int before increment is:", self.updatedInt)
+            self.updatedInt = self.updatedInt + 1
+            print("updated int is now:, ", self.updatedInt)
+            _ = Database.database().reference().root.child("Materials Brought").child(self.currentMaterial).setValue(self.updatedInt)
+        }
+//        print("updated int before increment is:", updatedInt)
+//        //updatedInt = updatedInt + 1
+//        print("updated int is now:, ", updatedInt)
+//        _ = Database.database().reference().root.child("Materials Brought").child(currentMaterial).setValue(updatedInt)
+    }
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.allowsMultipleSelectionDuringEditing = true
         tableView.setEditing(true, animated: false)
-        zipCodeRef = Database.database().reference(withPath:"zipcode")
-        
+        zipCodeRef = Database.database().reference(withPath:"Zipcode")
+        materialRef = Database.database().reference(withPath:"Materials Brought/"+currentMaterial)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -124,7 +158,9 @@ class StoriesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(self.itemList[indexPath.section][indexPath.row].title)
+        print(self.itemList[indexPath.row].title)
+        currentMaterial = self.itemList[indexPath.row].title
+        //addMaterials(str:self.itemList[indexPath.row].title)
         //        let selected = itemList[indexPath.row]
         //        print selected
     }
