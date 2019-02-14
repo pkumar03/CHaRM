@@ -10,12 +10,23 @@ import UIKit
 import FirebaseDatabase
 import FirebaseCore
 
+extension UIFont {
+    class func appRegularFontWith( size:CGFloat ) -> UIFont{
+        return  UIFont(name: "Lato-Light", size: 17)!
+    }
+    class func appBoldFontWith( size:CGFloat ) -> UIFont{
+        return  UIFont(name: "Lato-Bold", size: 17)!
+    }
+}
+
 class StoriesTableViewController: UITableViewController {
 
     var zipCodeRef: DatabaseReference!
     var materialRef: DatabaseReference!
     var currentMaterial = ""
     var updatedInt = 0
+    
+    
     
     
     @IBOutlet weak var zipCode: UITextField!
@@ -158,8 +169,8 @@ class StoriesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(self.itemList[indexPath.row].title)
-        currentMaterial = self.itemList[indexPath.row].title
+        print(self.itemList[indexPath.section][indexPath.row].title)
+        currentMaterial = self.itemList[indexPath.section][indexPath.row].title
         //addMaterials(str:self.itemList[indexPath.row].title)
         //        let selected = itemList[indexPath.row]
         //        print selected

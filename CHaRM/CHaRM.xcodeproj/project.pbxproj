@@ -32,7 +32,6 @@
 		4464C1F92214FA3700DFBC13 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4464C1EE2214FA3700DFBC13 /* OFL.txt */; };
 		4464C1FA2214FA3700DFBC13 /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4464C1EF2214FA3700DFBC13 /* Lato-BoldItalic.ttf */; };
 		4464C1FB2214FA3700DFBC13 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4464C1F02214FA3700DFBC13 /* Lato-Light.ttf */; };
-		4464C1FC2215032E00DFBC13 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AC3023B21E8280100F9F96C /* Info.plist */; };
 		510053C521EFE1AC00C56AB9 /* StoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510053C421EFE1AC00C56AB9 /* StoriesTableViewController.swift */; };
 		B6A7562C649D6382498155F2 /* Pods_CHaRMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4C1CDDBD8AEE9CCE272927 /* Pods_CHaRMTests.framework */; };
 		F4CBC108C2407E76D86DEE07 /* Pods_CHaRMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 851F2E2A0A899B837DAAD952 /* Pods_CHaRMUITests.framework */; };
@@ -343,7 +342,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4464C1FC2215032E00DFBC13 /* Info.plist in Resources */,
 				4464C1FB2214FA3700DFBC13 /* Lato-Light.ttf in Resources */,
 				4464C1F32214FA3700DFBC13 /* Lato-Bold.ttf in Resources */,
 				4464C1F12214FA3700DFBC13 /* Lato-Italic.ttf in Resources */,
