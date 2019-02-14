@@ -16,6 +16,7 @@ class StoriesTableViewController: UITableViewController {
     var materialRef: DatabaseReference!
     var currentMaterial = ""
     var updatedInt = 0
+    var ourArray = [String]()
     
     
     @IBOutlet weak var zipCode: UITextField!
@@ -34,27 +35,56 @@ class StoriesTableViewController: UITableViewController {
     }
     
     func addMaterials() {
-//        let key = zipCodeRef.childByAutoId().key
-//        let name = str
-//        let number = 3
-//        let materials = ["id": name, "Materials": number] as [String : Any]
-//
-//        materialRef.child(key!).setValue(materials)
-        _ = Database.database().reference().root.child("Materials Brought").child(currentMaterial).observeSingleEvent(of: .value) { (DataSnapshot) in
-            let valToUpdate = DataSnapshot.value as? NSNumber
-            print("value to update is: ", valToUpdate?.intValue as Any)
-            self.updatedInt = (valToUpdate?.intValue)! //aborts if value is nil fix during code review if needed also hi
+        
+        //Please ask me (Pranay) before changing anything in this function
+        //I added a semaphore to control access to currentMaterial + made a new dispatch queue and used gcd to control execution of the threads
+        
+        let queue = DispatchQueue(label: "com.gcd.myQueue", attributes: .concurrent)
+        var time  = 0
+        print("time at start of for loop: ", time)
+        time = time + 1
+        let semaphore = DispatchSemaphore(value: 1)
+
+        for i in ourArray {
+            
+            queue.async {
+            
+                semaphore.wait()
+                self.currentMaterial = i
+
+            
+                //self.currentMaterial = i
+                print("current material is currently: ", self.currentMaterial)
+                print("time is now at: ", time)
+                time = time + 1
+        
+                print("time at entry of problematic code: ", time)
+                _ = Database.database().reference().root.child("Materials Brought").child(self.currentMaterial).observeSingleEvent(of: .value) { (DataSnapshot) in
+                    let valToUpdate = DataSnapshot.value as? NSNumber
+                    print ("time when we get valToUpdate is & for item: ", time, self.currentMaterial)
+                    time = time + 1
+                    print("value to update is: ", valToUpdate?.intValue as Any)
+                    self.updatedInt = (valToUpdate?.intValue)! //aborts if value is nil fix during code review if needed also hi
+                    print("Reached group leave statement")
+                //semaphore.signal()
+                }
+            
+                //look into putting a mutex lock on currentMaterial
+                print("time before dispatch queue is: ", time)
+                time = time + 1
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                    print("now inside dispatch queue at time: ", time)
+                    time = time + 1
+                    print("updated int before increment is:", self.updatedInt)
+                    self.updatedInt = self.updatedInt + 1
+                    print("updated int is now:, ", self.updatedInt)
+                    _ = Database.database().reference().root.child("Materials Brought").child(self.currentMaterial).setValue(self.updatedInt)
+                    print("time after new int is in database is: ", time)
+                    time = time + 1
+                    semaphore.signal()
+                }
+            }
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-            print("updated int before increment is:", self.updatedInt)
-            self.updatedInt = self.updatedInt + 1
-            print("updated int is now:, ", self.updatedInt)
-            _ = Database.database().reference().root.child("Materials Brought").child(self.currentMaterial).setValue(self.updatedInt)
-        }
-//        print("updated int before increment is:", updatedInt)
-//        //updatedInt = updatedInt + 1
-//        print("updated int is now:, ", updatedInt)
-//        _ = Database.database().reference().root.child("Materials Brought").child(currentMaterial).setValue(updatedInt)
     }
     
     
@@ -138,7 +168,7 @@ class StoriesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
-        print(itemList[indexPath.section][indexPath.row].title)
+        //print(itemList[indexPath.section][indexPath.row].title)
         cell.textLabel?.text = itemList[indexPath.section][indexPath.row].title
         cell.detailTextLabel?.text = itemList[indexPath.section][indexPath.row].text
         return cell
@@ -158,11 +188,8 @@ class StoriesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(self.itemList[indexPath.row].title)
-        currentMaterial = self.itemList[indexPath.row].title
-        //addMaterials(str:self.itemList[indexPath.row].title)
-        //        let selected = itemList[indexPath.row]
-        //        print selected
+        //print(self.itemList[indexPath.section][indexPath.row].title)
+        ourArray.append(self.itemList[indexPath.section][indexPath.row].title)
     }
  
 
