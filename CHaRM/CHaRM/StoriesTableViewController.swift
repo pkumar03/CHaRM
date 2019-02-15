@@ -1,10 +1,6 @@
 //
 //  StoriesTableViewController.swift
 //  CHaRM
-//
-//  Created by Annette Cochran on 1/16/19.
-//  Copyright © 2019 JID8306. All rights reserved.
-//
 
 import UIKit
 import FirebaseDatabase
@@ -16,6 +12,7 @@ class StoriesTableViewController: UITableViewController {
     var materialRef: DatabaseReference!
     var currentMaterial = ""
     var updatedInt = 0
+    var ourArray = [String]()
     
     
     @IBOutlet weak var zipCode: UITextField!
@@ -34,27 +31,35 @@ class StoriesTableViewController: UITableViewController {
     }
     
     func addMaterials() {
-//        let key = zipCodeRef.childByAutoId().key
-//        let name = str
-//        let number = 3
-//        let materials = ["id": name, "Materials": number] as [String : Any]
-//
-//        materialRef.child(key!).setValue(materials)
-        _ = Database.database().reference().root.child("Materials Brought").child(currentMaterial).observeSingleEvent(of: .value) { (DataSnapshot) in
-            let valToUpdate = DataSnapshot.value as? NSNumber
-            print("value to update is: ", valToUpdate?.intValue as Any)
-            self.updatedInt = (valToUpdate?.intValue)! //aborts if value is nil fix during code review if needed also hi
+        
+        //Please ask me (Pranay) before changing anything in this function
+        //I added a semaphore to control access to currentMaterial + made a new dispatch queue and used gcd to control execution of the threads
+        
+        let queue = DispatchQueue(label: "com.gcd.myQueue", attributes: .concurrent)
+        let semaphore = DispatchSemaphore(value: 1)
+
+        for i in ourArray {
+            
+            queue.async {
+            
+                semaphore.wait()
+                self.currentMaterial = i
+                
+                _ = Database.database().reference().root.child("Materials Brought").child(self.currentMaterial).observeSingleEvent(of: .value) { (DataSnapshot) in
+                    let valToUpdate = DataSnapshot.value as? NSNumber
+                    self.updatedInt = (valToUpdate?.intValue)! //aborts if value is nil fix during code review if needed also hi
+                }
+            
+                //look into putting a semaphore lock on currentMaterial
+              
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                    self.updatedInt = self.updatedInt + 1
+                    _ = Database.database().reference().root.child("Materials Brought").child(self.currentMaterial).setValue(self.updatedInt)
+                    semaphore.signal()
+                }
+            }
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-            print("updated int before increment is:", self.updatedInt)
-            self.updatedInt = self.updatedInt + 1
-            print("updated int is now:, ", self.updatedInt)
-            _ = Database.database().reference().root.child("Materials Brought").child(self.currentMaterial).setValue(self.updatedInt)
-        }
-//        print("updated int before increment is:", updatedInt)
-//        //updatedInt = updatedInt + 1
-//        print("updated int is now:, ", updatedInt)
-//        _ = Database.database().reference().root.child("Materials Brought").child(currentMaterial).setValue(updatedInt)
     }
     
     
@@ -97,7 +102,7 @@ class StoriesTableViewController: UITableViewController {
         Recyclable(id: 10, section: 0, title: "Bulbs", text: ""),
         Recyclable(id: 11, section: 0, title: "CFL Bulbs", text: ""),
         Recyclable(id: 12, section: 0, title: "Toilets", text: "Seats and all hardware must be removed")],
-        [Recyclable(id: 13, section: 1, title: "Plastics/clean, dry, empty plastic bags/ film packaging/grocery bags", text: ""),
+        [Recyclable(id: 13, section: 1, title: "Plastic or grocery bags", text: "Plastics/clean, dry, empty plastic bags/ film packaging/grocery bags"),
         Recyclable(id: 14, section: 1, title: "Plastic food containers", text: "#1-#2-#5, clean and dry"),
         Recyclable(id: 15, section: 1, title: "Paper", text: "magazines/office paper/newspaper/phone books"),
         Recyclable(id: 16, section: 1, title: "Glass bottles and jars", text: "food grade only"),
@@ -108,13 +113,13 @@ class StoriesTableViewController: UITableViewController {
         Recyclable(id: 21, section: 1, title: "Textiles", text: ""),
         Recyclable(id: 22, section: 1, title: "Styrofoam", text: "please wash"),
         Recyclable(id: 23, section: 1, title: "Batteries", text: "Zinc Carbon, Button, Lithium, Rechargeable, Car"),
-        Recyclable(id: 24, section: 1, title: "Household fats/oil/grease", text: ""),
+        Recyclable(id: 24, section: 1, title: "Household fats or oil or grease", text: ""),
         Recyclable(id: 25, section: 1, title: "Waxed Cartons", text: "Broth, Milk, Juice"),
         Recyclable(id: 26, section: 1, title: "Wine Corks", text: ""),
         Recyclable(id: 27, section: 1, title: "Political signs", text: "")],
         [Recyclable(id: 28, section: 2, title: "Books", text: ""),
         Recyclable(id: 29, section: 2, title: "Musical Instruments", text: ""),
-        Recyclable(id: 30, section: 2, title: "Sports equiptment", text: ""),
+        Recyclable(id: 30, section: 2, title: "Sports equipment", text: ""),
         Recyclable(id: 31, section: 2, title: "Bikes", text: ""),
         Recyclable(id: 32, section: 2, title: "Textiles", text: ""),
         Recyclable(id: 33, section: 2, title: "Furniture in usable condition", text: "No Office Furniture"),
@@ -138,7 +143,7 @@ class StoriesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
-        print(itemList[indexPath.section][indexPath.row].title)
+        //print(itemList[indexPath.section][indexPath.row].title)
         cell.textLabel?.text = itemList[indexPath.section][indexPath.row].title
         cell.detailTextLabel?.text = itemList[indexPath.section][indexPath.row].text
         return cell
@@ -158,11 +163,8 @@ class StoriesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(self.itemList[indexPath.row].title)
-        currentMaterial = self.itemList[indexPath.row].title
-        //addMaterials(str:self.itemList[indexPath.row].title)
-        //        let selected = itemList[indexPath.row]
-        //        print selected
+        //print(self.itemList[indexPath.section][indexPath.row].title)
+        ourArray.append(self.itemList[indexPath.section][indexPath.row].title)
     }
  
 
