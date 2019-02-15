@@ -6,15 +6,6 @@ import UIKit
 import FirebaseDatabase
 import FirebaseCore
 
-extension UIFont {
-    class func appRegularFontWith( size:CGFloat ) -> UIFont{
-        return  UIFont(name: "Lato-Light", size: 17)!
-    }
-    class func appBoldFontWith( size:CGFloat ) -> UIFont{
-        return  UIFont(name: "Lato-Bold", size: 17)!
-    }
-}
-
 class StoriesTableViewController: UITableViewController {
 
     var zipCodeRef: DatabaseReference!
@@ -22,8 +13,6 @@ class StoriesTableViewController: UITableViewController {
     var currentMaterial = ""
     var updatedInt = 0
     var ourArray = [String]()
-    
-    
     
     
     @IBOutlet weak var zipCode: UITextField!

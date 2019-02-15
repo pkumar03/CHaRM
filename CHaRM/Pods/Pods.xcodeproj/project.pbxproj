@@ -2244,7 +2244,8 @@
 				E35ADFDA18808626C80D9CF3E01DDE91 /* NSData+FIRBase64.m */,
 				45F394433E1CD7259314B55470327562 /* Support Files */,
 			);
-			name = Frameworks;
+			name = FirebaseAuth;
+			path = FirebaseAuth;
 			sourceTree = "<group>";
 		};
 		5FE4AD16D9E30B2DC01CCED9F73B87AC /* nanopb */ = {
@@ -2453,8 +2454,8 @@
 			children = (
 				C0C433421BC261E01EB98CC86746FEC0 /* Frameworks */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/GoogleUtilities";
+			name = GoogleAppMeasurement;
+			path = GoogleAppMeasurement;
 			sourceTree = "<group>";
 		};
 		CDCF9301DBD27DB7C08845A6354B9A60 /* Support Files */ = {
