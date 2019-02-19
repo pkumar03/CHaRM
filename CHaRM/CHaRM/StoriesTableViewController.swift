@@ -14,18 +14,47 @@ class StoriesTableViewController: UITableViewController {
     var updatedInt = 0
     var ourArray = [String]()
     
+    enum zipCodeError : Error {
+        //wrong length or not entered
+        case wrongLength
+        case wrongChars
+    }
     
     @IBOutlet weak var zipCode: UITextField!
     
     
     @IBAction func submitButton(_ sender: Any) {
-        addZipCode()
+        do {
+            try addZipCode()
+        } catch  zipCodeError.wrongLength {
+            let wrongLengthAlert = UIAlertController(title: "Please enter 5-digit zip code", message: "", preferredStyle: .alert)
+            wrongLengthAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(wrongLengthAlert, animated: true)
+            print("Please enter 5-digit zip code")
+        } catch zipCodeError.wrongChars {
+            let wrongCharsAlert = UIAlertController(title: "Please enter zip code with numbers only", message: "", preferredStyle: .alert)
+            wrongCharsAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(wrongCharsAlert, animated: true)
+            print("Please enter zip code with numbers only")
+        } catch {
+            print("Unexpected error: please check that you entered zip code correctly")
+        }
         addMaterials()
     }
     
-    func addZipCode() {
+    func addZipCode() throws {
         let key = zipCodeRef.childByAutoId().key
         let zip = ["id": key as Any, "userZip": zipCode.text! as String]
+        let zipString = zipCode.text!
+        if (zipString.count != 5) {
+            throw zipCodeError.wrongLength
+        }
+        for index in zipString.indices {
+            if (zipString[index] > "9") {
+                throw zipCodeError.wrongChars
+            }
+        }
+        //print(zipCode.text)
         
         zipCodeRef.child(key!).setValue(zip) //Aborts execution if zip is null
     }
@@ -67,6 +96,7 @@ class StoriesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        zipCode.borderStyle = UITextField.BorderStyle.roundedRect
         tableView.allowsMultipleSelectionDuringEditing = true
         tableView.setEditing(true, animated: false)
         zipCodeRef = Database.database().reference(withPath:"Zipcode")
