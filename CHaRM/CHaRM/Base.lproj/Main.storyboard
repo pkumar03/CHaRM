@@ -468,7 +468,6 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginAction:" destination="CQI-mE-KRE" eventType="touchUpInside" id="0n8-js-Jff"/>
-                                    <segue destination="49e-Tb-3d3" kind="presentation" identifier="loginToHome" id="KdT-AJ-9pG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -478,6 +477,7 @@
                     <connections>
                         <outlet property="email" destination="8gC-9m-TcA" id="8Up-kI-vLi"/>
                         <outlet property="password" destination="Mea-9b-NGc" id="CTU-gd-YPP"/>
+                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="loginToHome" id="npn-ai-GXv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N0h-3w-VTr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -544,6 +544,6 @@
         <image name="recyleIcon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KdT-AJ-9pG"/>
+        <segue reference="npn-ai-GXv"/>
     </inferredMetricsTieBreakers>
 </document>
