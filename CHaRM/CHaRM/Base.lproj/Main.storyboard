@@ -415,7 +415,6 @@
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="signUpAction:" destination="keR-wu-cJs" eventType="touchUpInside" id="4Sp-70-cE8"/>
-                                    <segue destination="49e-Tb-3d3" kind="presentation" identifier="signupToHome" id="wRK-o4-aBC"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aHc-Kj-Fnf">
@@ -433,6 +432,7 @@
                         <outlet property="email" destination="aHc-Kj-Fnf" id="XKq-Bn-PaL"/>
                         <outlet property="password" destination="0Os-r9-0ve" id="Mvg-rW-MRj"/>
                         <outlet property="passwordConfirm" destination="M4G-7E-IqU" id="JHG-hh-iOs"/>
+                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="signupToHome" id="UYW-R4-SjC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9W-ig-BFr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -544,6 +544,6 @@
         <image name="recyleIcon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="npn-ai-GXv"/>
+        <segue reference="UYW-R4-SjC"/>
     </inferredMetricsTieBreakers>
 </document>

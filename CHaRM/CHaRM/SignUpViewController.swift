@@ -27,7 +27,7 @@ class SignUpViewController: UIViewController {
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             
             alertController.addAction(defaultAction)
-            self.presentedViewController?.present(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
         }
         else{
             Auth.auth().createUser(withEmail: email.text!, password: password.text!){ (user, error) in
@@ -39,7 +39,7 @@ class SignUpViewController: UIViewController {
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     
                     alertController.addAction(defaultAction)
-                    self.presentedViewController?.present(alertController, animated: true, completion: nil)
+                    self.present(alertController, animated: true, completion: nil)
                 }
             }
         }
