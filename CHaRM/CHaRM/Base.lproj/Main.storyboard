@@ -170,15 +170,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.40784313729999999" green="0.74901960779999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textField key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip Code" textAlignment="natural" minimumFontSize="17" id="yF3-NB-vAp">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                        <textField key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Zip Code (mandatory)" textAlignment="natural" minimumFontSize="35" id="yF3-NB-vAp">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" textContentType="postal-code"/>
                         </textField>
                         <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="s3a-N4-PM0">
-                            <rect key="frame" x="0.0" y="118" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="148" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Submit"/>
                             <connections>
@@ -187,7 +187,7 @@
                         </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LabelCell" textLabel="tXL-IZ-YlU" detailTextLabel="3pK-Ie-S4C" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="VE3-a4-bIF">
-                                <rect key="frame" x="0.0" y="58" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VE3-a4-bIF" id="YaU-wX-68X">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
