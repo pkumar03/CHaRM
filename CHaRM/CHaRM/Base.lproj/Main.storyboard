@@ -141,7 +141,7 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="donateIcon" translatesAutoresizingMaskIntoConstraints="NO" id="sMm-nN-Ln9">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="sMm-nN-Ln9">
                                         <rect key="frame" x="96" y="407" width="240" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -562,11 +562,12 @@
         <image name="background" width="1250" height="274"/>
         <image name="bottomScreen" width="1944" height="666"/>
         <image name="branches" width="4256" height="2832"/>
-        <image name="donateIcon" width="30" height="30"/>
-        <image name="factIcon" width="30" height="30"/>
-        <image name="infoIcon" width="30" height="30"/>
-        <image name="profileIcon" width="30" height="30"/>
-        <image name="recyleIcon" width="30" height="30"/>
+        <image name="donateIcon" width="100" height="100"/>
+        <image name="factIcon" width="100" height="100"/>
+        <image name="infoIcon" width="100" height="100"/>
+        <image name="map" width="1073" height="763"/>
+        <image name="profileIcon" width="100" height="100"/>
+        <image name="recyleIcon" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="wRK-o4-aBC"/>
