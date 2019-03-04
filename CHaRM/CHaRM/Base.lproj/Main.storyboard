@@ -378,6 +378,9 @@
                                 <state key="normal" title="GUEST LOGIN" backgroundImage="background">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="49e-Tb-3d3" kind="presentation" id="eIr-EB-x6W"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tll-gQ-s3j">
                                 <rect key="frame" x="264" y="496" width="51" height="36"/>
@@ -570,6 +573,6 @@
         <image name="recyleIcon" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wRK-o4-aBC"/>
+        <segue reference="eIr-EB-x6W"/>
     </inferredMetricsTieBreakers>
 </document>
