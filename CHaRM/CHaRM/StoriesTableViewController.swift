@@ -7,7 +7,7 @@ import FirebaseDatabase
 import FirebaseCore
 
 var paintIndv = 0
-var myDict = ["" : 0, "Bikes" : 0, "Paint" : 0, "Aluminum Cans" : 0]
+var myDict = ["Batteries" : 0, "Bikes" : 0, "Paint" : 0, "Aluminum Cans" : 0, "Books" : 0, "Bulbs" : 0, "Cardboard" : 0, "Clothing" : 0, "Electronics" : 0, "Furniture in usable condition" : 0, "Glass bottles and jars" : 0, "Household Chemicals" : 0, "Household fats or oil or grease" : 0, "Household items in usable condition" : 0, "Ink Printer Cartridges" : 0, "Large Appliances" : 0, "Mattresses" : 0, "Metal" : 0, "Musical Instruments" : 0, "Paper" : 0, "Plastic food containers" : 0, "Plastic or grocery bags" : 0, "Political signs" : 0, "Propane Tanks" : 0, "Smoke Detectors" : 0, "Sports equipment" : 0, "Styrofoam" : 0, "Textiles" : 0, "Thermometers" : 0, "Tires" : 0, "Toilets" : 0, "Waxed Cartons" : 0, "Wine Corks" : 0]
 
 class StoriesTableViewController: UITableViewController {
 

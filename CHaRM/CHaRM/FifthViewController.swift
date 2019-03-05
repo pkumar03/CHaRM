@@ -18,6 +18,9 @@ class FifthViewController: UIViewController {
         for (mats, _) in myDict {
             print(mats)
             let temp = UserDefaults.standard.integer(forKey: mats)
+//            if (temp != 0 ) {
+//
+//            }
             print("Material and Number: ", mats, temp)
             
         }
