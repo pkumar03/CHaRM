@@ -248,12 +248,22 @@
                                     <segue destination="iHv-ic-lCB" kind="presentation" id="wWf-iv-jSI"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLA-ig-mwQ">
+                                <rect key="frame" x="166" y="263" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="zXw-ik-ueI"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="profileIcon" id="OQc-ds-q7M"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="paintLabel" destination="FLA-ig-mwQ" id="b7S-v1-O8c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kqy-8k-puT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -382,6 +392,14 @@
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <segue destination="keR-wu-cJs" kind="show" id="6at-k2-9X5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pl6-WA-TDG">
+                                <rect key="frame" x="167" y="413" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Guest"/>
+                                <connections>
+                                    <segue destination="49e-Tb-3d3" kind="presentation" id="H85-cJ-6yq"/>
                                 </connections>
                             </button>
                         </subviews>

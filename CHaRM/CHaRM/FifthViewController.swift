@@ -10,9 +10,19 @@ import UIKit
 
 class FifthViewController: UIViewController {
 
+    @IBOutlet weak var paintLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("Profile: ", paintIndv)
+        //let paintNum = UserDefaults.standard.value(forKey: "paintKey")
+        for (mats, _) in myDict {
+            print(mats)
+            let temp = UserDefaults.standard.integer(forKey: mats)
+            print("Material and Number: ", mats, temp)
+            
+        }
+        
+        //paintLabel.text =  String(paintNum)
         // Do any additional setup after loading the view.
     }
     

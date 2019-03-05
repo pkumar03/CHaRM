@@ -6,6 +6,9 @@ import UIKit
 import FirebaseDatabase
 import FirebaseCore
 
+var paintIndv = 0
+var myDict = ["" : 0, "Bikes" : 0, "Paint" : 0, "Aluminum Cans" : 0]
+
 class StoriesTableViewController: UITableViewController {
 
     var zipCodeRef: DatabaseReference!
@@ -14,14 +17,19 @@ class StoriesTableViewController: UITableViewController {
     var updatedInt = 0
     var ourArray = [String]()
     
+   // var myDict = ["Aluminum Cans" : 0, "Bikes" : 0, "Paint" : 0]
+    
+    let defaults = UserDefaults.standard
+    
     enum zipCodeError : Error {
         //wrong length or not entered
         case wrongLength
         case wrongChars
     }
     
-    @IBOutlet weak var zipCode: UITextField!
+    //var materialsUpdateDict = UserDefaults.standard.value(forKey: "dict") as! [String: Int]
     
+    @IBOutlet weak var zipCode: UITextField!
     
     @IBAction func submitButton(_ sender: Any) {
         do {
@@ -69,6 +77,8 @@ class StoriesTableViewController: UITableViewController {
 
         for i in ourArray {
             
+            myDict[i] = myDict[i]! + 1
+            print(myDict)
             queue.async {
             
                 semaphore.wait()
@@ -89,9 +99,30 @@ class StoriesTableViewController: UITableViewController {
                 }
             }
         }
+        //defaults.set(materialsUpdateDict, forKey: "dict")
+        persistData()
     }
     
     
+    func persistData() {
+        for (materials, number) in myDict {
+            //defaults.integer(forKey: materials)
+            if (myDict[materials] != 0) {
+                if (defaults.value(forKey: materials) as? Int == nil) {
+                    print(materials)
+                }
+                let oldNum = defaults.integer(forKey: materials)
+                let newNum = number + oldNum
+                print("Material: , Number:", materials,newNum)
+                defaults.set(newNum, forKey: materials)
+            }
+        }
+        //            if (i == "Paint"){
+        //                paintIndv = paintIndv + 1
+        //                defaults.set(paintIndv, forKey: "PaintKey")
+        //                print (paintIndv, "Stores")
+        //            }
+    }
     
     
     override func viewDidLoad() {
@@ -101,6 +132,11 @@ class StoriesTableViewController: UITableViewController {
         tableView.setEditing(true, animated: false)
         zipCodeRef = Database.database().reference(withPath:"Zipcode")
         materialRef = Database.database().reference(withPath:"Materials Brought/"+currentMaterial)
+        
+        paintIndv = defaults.integer(forKey: "PaintKey")
+//        materialsDictionary = ["Aluminum Cans" : 0, "Bikes" : 0, "Books" : 0]
+//        print(materialsDictionary)
+//        materialsDictionary = defaults.dictionary(forKey: "dict") as? [String : Int] ?? ["Please" : 0]
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
