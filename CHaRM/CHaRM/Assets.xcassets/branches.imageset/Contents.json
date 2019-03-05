@@ -2,6 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "branches-cloudy-environment-1131458.jpg",
       "scale" : "1x"
     },
     {
@@ -10,7 +11,6 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "Fun Fact Icon.pdf",
       "scale" : "3x"
     }
   ],
