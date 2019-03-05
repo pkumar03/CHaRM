@@ -13,6 +13,9 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    
+    var segueShouldOccur = true || false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,9 +26,14 @@ class LoginViewController: UIViewController {
     @IBAction func loginAction(_ sender: Any) {
         Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
             if error == nil{
+                print("There is no error")
                 self.performSegue(withIdentifier: "loginToHome", sender: self)
+                //self.segueShouldOccur = true
+                //self.signIn()
             }
             else{
+                //self.segueShouldOccur = false
+                print("this is false")
                 let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
                 let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 
@@ -35,6 +43,23 @@ class LoginViewController: UIViewController {
         }
         
     }
+   
+//    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+//        if identifier == "loginToHome" {
+//            print ("At verification")
+//            print ("should occur: ", segueShouldOccur)
+//            if !segueShouldOccur {
+//                return false
+//            } else {
+//                return true
+//            }
+//        }
+//        return true
+//    }
+//
+//    func signIn() {
+//        self.performSegue(withIdentifier: "loginToHome", sender: nil)
+//    }
     /*
     // MARK: - Navigation
 
