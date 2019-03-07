@@ -14,18 +14,47 @@ class StoriesTableViewController: UITableViewController {
     var updatedInt = 0
     var ourArray = [String]()
     
+    enum zipCodeError : Error {
+        //wrong length or not entered
+        case wrongLength
+        case wrongChars
+    }
     
     @IBOutlet weak var zipCode: UITextField!
     
     
     @IBAction func submitButton(_ sender: Any) {
-        addZipCode()
+        do {
+            try addZipCode()
+        } catch  zipCodeError.wrongLength {
+            let wrongLengthAlert = UIAlertController(title: "Please enter 5-digit zip code", message: "", preferredStyle: .alert)
+            wrongLengthAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(wrongLengthAlert, animated: true)
+            print("Please enter 5-digit zip code")
+        } catch zipCodeError.wrongChars {
+            let wrongCharsAlert = UIAlertController(title: "Please enter zip code with numbers only", message: "", preferredStyle: .alert)
+            wrongCharsAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(wrongCharsAlert, animated: true)
+            print("Please enter zip code with numbers only")
+        } catch {
+            print("Unexpected error: please check that you entered zip code correctly")
+        }
         addMaterials()
     }
     
-    func addZipCode() {
+    func addZipCode() throws {
         let key = zipCodeRef.childByAutoId().key
         let zip = ["id": key as Any, "userZip": zipCode.text! as String]
+        let zipString = zipCode.text!
+        if (zipString.count != 5) {
+            throw zipCodeError.wrongLength
+        }
+        for index in zipString.indices {
+            if (zipString[index] > "9") {
+                throw zipCodeError.wrongChars
+            }
+        }
+        //print(zipCode.text)
         
         zipCodeRef.child(key!).setValue(zip) //Aborts execution if zip is null
     }
@@ -67,6 +96,8 @@ class StoriesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        zipCode.borderStyle = UITextField.BorderStyle.roundedRect
+        zipCode.keyboardType = UIKeyboardType.numberPad
         tableView.allowsMultipleSelectionDuringEditing = true
         tableView.setEditing(true, animated: false)
         zipCodeRef = Database.database().reference(withPath:"Zipcode")
@@ -126,6 +157,30 @@ class StoriesTableViewController: UITableViewController {
         Recyclable(id: 34, section: 2, title: "Household items in usable condition", text: ""),
         Recyclable(id: 30, section: 2, title: "Clothing", text: "")],
     ]
+    
+    struct QuantityAlert {
+        
+        var prompt : String
+        var message: String
+        var textBoxLabel : String
+        
+    }
+    
+    var quantityAlerts = [
+        QuantityAlert(prompt: "How many pounds of paint did you bring?", message: "First 50 lbs are free, each additional pound is $0.25", textBoxLabel: "# of lbs"),
+        QuantityAlert(prompt: "How many pounds of chemicals did you bring?", message: "First 50 lbs are free, each additional pound is $0.25", textBoxLabel: "# of lbs"),
+        QuantityAlert(prompt: "How many electronics did you bring?", message: "TV's and monitors: $15 each", textBoxLabel: "# of electronics"),
+        QuantityAlert(prompt: "How many tires did you bring?", message: "First 2 are free, each additional tire is $2", textBoxLabel: "# of tires"),
+        QuantityAlert(prompt: "How many sets of mattresses (set + box spring) did you bring?", message: "$10 per set", textBoxLabel: "# of sets"),
+        QuantityAlert(prompt: "How many propane tanks did you bring?", message: "$10 per tank", textBoxLabel: "# of tanks"),
+        QuantityAlert(prompt: "How many large appliances did you bring?", message: "Refrigerators, Stoves, Dishwashers, Dehumidifiers, AC units: $10 each", textBoxLabel: "# of appliances"),
+        QuantityAlert(prompt: "How many thermometers did you bring?", message: "$5 per thermometer", textBoxLabel: "# of thermometers"),
+        QuantityAlert(prompt: "How many smoke detectors did you bring?", message: "$5 per smoke detector", textBoxLabel: "# of smoke detectors"),
+        QuantityAlert(prompt: "How many light bulbs did you bring?", message: "4ft & 6ft Fluorescent are free \nFirst 2 free, each additional bulb is $0.50", textBoxLabel: "# of bulbs"),
+        QuantityAlert(prompt: "How many CFL bulbs did you bring?", message: "First 5 are free, each additional CFL bulb is $0.50", textBoxLabel: "# of bulbs"),
+        QuantityAlert(prompt: "How many toilets did you bring?", message: "", textBoxLabel: "# of toilets"),
+    ]
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
@@ -164,6 +219,15 @@ class StoriesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //print(self.itemList[indexPath.section][indexPath.row].title)
+        if (indexPath.section == 0) {
+            let quantityAlert = UIAlertController(title: quantityAlerts[indexPath.row].prompt, message: quantityAlerts[indexPath.row].message, preferredStyle: .alert)
+            quantityAlert.addTextField { (textField:UITextField) in
+                textField.placeholder = self.quantityAlerts[indexPath.row].textBoxLabel
+                textField.keyboardType = UIKeyboardType.numberPad
+            }
+            quantityAlert.addAction(UIAlertAction(title: "Enter", style: .default, handler: nil))
+            self.present(quantityAlert, animated: true)
+        }
         ourArray.append(self.itemList[indexPath.section][indexPath.row].title)
     }
  
