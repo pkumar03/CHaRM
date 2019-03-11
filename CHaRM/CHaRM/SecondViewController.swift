@@ -12,7 +12,7 @@ import SafariServices
 class SecondViewController: UIViewController {
 
     @IBAction func payPalPressed(_ sender: Any) {
-        showSafariVC(for: "https://www.paypal.com/donate/?token=gu_ENMnbElN5hZ2eWQeAgtjcaKatUHbA_bpGSBgz1ptShHN7St4EoZuS93Fr5x5pZI4QhW&country.x=US&locale.x=US")
+        showSafariVC(for: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=77CFF58BGD5T4&source=url")
         
     }
     

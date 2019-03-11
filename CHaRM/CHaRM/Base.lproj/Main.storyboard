@@ -297,7 +297,6 @@
                             <outlet property="delegate" destination="FAU-RF-Ddp" id="4QA-a5-zBb"/>
                         </connections>
                     </tableView>
-                    <nil key="simulatedTopBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iKI-Uw-cL1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
