@@ -10,12 +10,9 @@ import UIKit
 
 class FifthViewController: UIViewController {
 
-    @IBOutlet weak var nameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let defaults = UserDefaults.standard
-        let name = UserDefaults.standard.string(forKey: "nameKey") ?? ""
-        self.nameLabel.text = "Hi, " + name + "!"
+
         // Do any additional setup after loading the view.
     }
     
