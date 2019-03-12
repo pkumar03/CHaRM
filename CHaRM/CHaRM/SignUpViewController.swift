@@ -14,6 +14,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var passwordConfirm: UITextField!
+    @IBOutlet weak var nameField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,10 +30,19 @@ class SignUpViewController: UIViewController {
             alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
         }
+        if (nameField.text!.count == 0) {
+            let alertController = UIAlertController(title: "Error", message: "Please enter your name", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
         else{
             Auth.auth().createUser(withEmail: email.text!, password: password.text!){ (user, error) in
                 if error == nil {
                     self.performSegue(withIdentifier: "signupToHome", sender: self)
+                //let defaults = UserDefaults.standard
+                UserDefaults.standard.set(self.nameField.text, forKey: "nameKey")
                 }
                 else{
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)

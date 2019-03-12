@@ -254,16 +254,26 @@
                                     <segue destination="iHv-ic-lCB" kind="presentation" id="wWf-iv-jSI"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Pb-Ko-bl5">
+                                <rect key="frame" x="72" y="209" width="239" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.2470588235" green="0.70980392160000005" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="zXw-ik-ueI"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="profileIcon" id="OQc-ds-q7M"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="6Pb-Ko-bl5" id="9fH-uW-NXh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kqy-8k-puT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2508" y="1"/>
+            <point key="canvasLocation" x="2508" y="0.44977511244377816"/>
         </scene>
         <!--Donate-->
         <scene sceneID="wg7-f3-ORb">
@@ -450,7 +460,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M4G-7E-IqU">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M4G-7E-IqU">
                                 <rect key="frame" x="139" y="318" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -494,6 +504,7 @@
                     </view>
                     <connections>
                         <outlet property="email" destination="aHc-Kj-Fnf" id="XKq-Bn-PaL"/>
+                        <outlet property="nameField" destination="8hn-ls-uSx" id="FmY-48-4c1"/>
                         <outlet property="password" destination="0Os-r9-0ve" id="Mvg-rW-MRj"/>
                         <outlet property="passwordConfirm" destination="M4G-7E-IqU" id="JHG-hh-iOs"/>
                         <segue destination="49e-Tb-3d3" kind="presentation" identifier="signupToHome" id="UYW-R4-SjC"/>
@@ -581,7 +592,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="-2" y="-115"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="FBK-0J-WNt">
@@ -596,6 +607,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PRp-wP-P0B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1794" y="-450"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="S1Y-pc-daA">
@@ -610,6 +622,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EgW-JU-xMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-167" y="-879"/>
         </scene>
     </scenes>
     <resources>
