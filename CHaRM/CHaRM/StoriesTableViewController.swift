@@ -20,7 +20,6 @@ class StoriesTableViewController: UITableViewController {
         case wrongChars
     }
     
-    @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var zipCode: UITextField!
     
     
