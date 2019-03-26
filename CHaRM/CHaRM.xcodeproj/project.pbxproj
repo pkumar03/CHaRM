@@ -21,6 +21,7 @@
 		3AC3025021E8280100F9F96C /* CHaRMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC3024F21E8280100F9F96C /* CHaRMUITests.swift */; };
 		3AC3026021E82A9500F9F96C /* FunFactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC3025F21E82A9500F9F96C /* FunFactViewController.swift */; };
 		3AC3026221E835B400F9F96C /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC3026121E835B400F9F96C /* FifthViewController.swift */; };
+		3AF3E4D2224A8DC0008CC099 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF3E4D1224A8DC0008CC099 /* ProfileViewController.swift */; };
 		510053C521EFE1AC00C56AB9 /* StoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510053C421EFE1AC00C56AB9 /* StoriesTableViewController.swift */; };
 		B6A7562C649D6382498155F2 /* Pods_CHaRMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4C1CDDBD8AEE9CCE272927 /* Pods_CHaRMTests.framework */; };
 		F4CBC108C2407E76D86DEE07 /* Pods_CHaRMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 851F2E2A0A899B837DAAD952 /* Pods_CHaRMUITests.framework */; };
@@ -75,6 +76,7 @@
 		3AC3025121E8280100F9F96C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AC3025F21E82A9500F9F96C /* FunFactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunFactViewController.swift; sourceTree = "<group>"; };
 		3AC3026121E835B400F9F96C /* FifthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
+		3AF3E4D1224A8DC0008CC099 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		44D945AB21F15015008F4A8D /* CHaRM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHaRM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D945AC21F15015008F4A8D /* CHaRMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHaRMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D945AD21F15015008F4A8D /* CHaRMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHaRMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +156,7 @@
 				3AC3023821E8280100F9F96C /* LaunchScreen.storyboard */,
 				3AC3023B21E8280100F9F96C /* Info.plist */,
 				3A5C7E3B21FA270A00583C0B /* GoogleService-Info.plist */,
+				3AF3E4D1224A8DC0008CC099 /* ProfileViewController.swift */,
 				3A181D6F21EA7EE9001CCAB4 /* LoginViewController.swift */,
 				3A9C976921EFB15600FD74FB /* SignUpViewController.swift */,
 				3AC3025F21E82A9500F9F96C /* FunFactViewController.swift */,
@@ -431,6 +434,7 @@
 				3A9C976A21EFB15600FD74FB /* SignUpViewController.swift in Sources */,
 				3AC3023221E8280000F9F96C /* SecondViewController.swift in Sources */,
 				3AC3022E21E8280000F9F96C /* AppDelegate.swift in Sources */,
+				3AF3E4D2224A8DC0008CC099 /* ProfileViewController.swift in Sources */,
 				3AC3023021E8280000F9F96C /* FirstViewController.swift in Sources */,
 				3AC3026021E82A9500F9F96C /* FunFactViewController.swift in Sources */,
 			);
