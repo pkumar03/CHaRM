@@ -10,7 +10,7 @@ import UIKit
 
 class FifthViewController: UIViewController {
 
-    @IBOutlet weak var paintLabel: UILabel!
+    //@IBOutlet weak var paintLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Profile: ", paintIndv)
