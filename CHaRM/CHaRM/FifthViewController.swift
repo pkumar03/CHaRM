@@ -22,7 +22,7 @@ class FifthViewController: UIViewController {
 //
 //            }
             print("Material and Number: ", mats, temp)
-            
+        
         }
         
         //paintLabel.text =  String(paintNum)
@@ -39,5 +39,6 @@ class FifthViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
 
 }
