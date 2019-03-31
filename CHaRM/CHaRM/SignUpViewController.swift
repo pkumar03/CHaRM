@@ -41,8 +41,7 @@ class SignUpViewController: UIViewController {
             Auth.auth().createUser(withEmail: email.text!, password: password.text!){ (user, error) in
                 if error == nil {
                     self.performSegue(withIdentifier: "signupToHome", sender: self)
-                //let defaults = UserDefaults.standard
-                UserDefaults.standard.set(self.nameField.text, forKey: "nameKey")
+                    UserDefaults.standard.set(self.nameField.text, forKey: "nameKey")
                 }
                 else{
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)

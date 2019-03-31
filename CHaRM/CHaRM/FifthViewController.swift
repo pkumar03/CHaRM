@@ -10,12 +10,26 @@ import UIKit
 
 class FifthViewController: UIViewController {
 
+    //@IBOutlet weak var paintLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let defaults = UserDefaults.standard
         let name = UserDefaults.standard.string(forKey: "nameKey") ?? ""
         self.nameLabel.text = "Hi, " + name + "!"
+        print("Profile: ", paintIndv)
+        //let paintNum = UserDefaults.standard.value(forKey: "paintKey")
+        for (mats, _) in myDict {
+            print(mats)
+            let temp = UserDefaults.standard.integer(forKey: mats)
+//            if (temp != 0 ) {
+//
+//            }
+            print("Material and Number: ", mats, temp)
+    
+        
+        }
+        
+        //paintLabel.text =  String(paintNum)
         // Do any additional setup after loading the view.
     }
     
@@ -29,5 +43,6 @@ class FifthViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
 
 }
