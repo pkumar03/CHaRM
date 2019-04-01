@@ -18,7 +18,11 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        email.layer.borderColor = UIColor.gray.cgColor
+        password.layer.borderColor = UIColor.gray.cgColor
+        email.layer.borderWidth = 1.0
+        password.layer.borderWidth = 1.0
         // Do any additional setup after loading the view.
     }
     
