@@ -14,10 +14,15 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var passwordConfirm: UITextField!
-    @IBOutlet weak var nameField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        email.layer.borderColor = UIColor.gray.cgColor
+        password.layer.borderColor = UIColor.gray.cgColor
+        passwordConfirm.layer.borderColor = UIColor.gray.cgColor
+        email.layer.borderWidth = 1.0
+        password.layer.borderWidth = 1.0
+        passwordConfirm.layer.borderWidth = 1.0
         // Do any additional setup after loading the view.
     }
     
@@ -30,18 +35,10 @@ class SignUpViewController: UIViewController {
             alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
         }
-        if (nameField.text!.count == 0) {
-            let alertController = UIAlertController(title: "Error", message: "Please enter your name", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            
-            alertController.addAction(defaultAction)
-            self.present(alertController, animated: true, completion: nil)
-        }
         else{
             Auth.auth().createUser(withEmail: email.text!, password: password.text!){ (user, error) in
                 if error == nil {
                     self.performSegue(withIdentifier: "signupToHome", sender: self)
-                    UserDefaults.standard.set(self.nameField.text, forKey: "nameKey")
                 }
                 else{
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
