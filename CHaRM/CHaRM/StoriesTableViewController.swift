@@ -159,7 +159,7 @@ class StoriesTableViewController: UITableViewController {
             .bold("\nElectronics: ")
             .normal("TVs and monitors are$15, and the TV must be intact. Electronics include all items that required electricity")
             .bold("\nTires: ")
-            .normal("First two no charge, each additional $2 unless a council member event. YOU must unload")
+            .normal("First two no charge, each additional $2 unless a council member event. YOU must unload these")
             .bold("\nMattresses: ")
             .normal("$10 per set")
             .bold("\nPropane Tanks: ")
