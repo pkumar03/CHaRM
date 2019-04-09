@@ -33,6 +33,7 @@ class StoriesTableViewController: UITableViewController {
     var currentMaterial = ""
     var updatedInt = 0
     var ourArray = [String]()
+    var multiple = 1
     
     // var myDict = ["Aluminum Cans" : 0, "Bikes" : 0, "Paint" : 0]
     
@@ -99,7 +100,7 @@ class StoriesTableViewController: UITableViewController {
         for i in ourArray {
             
             myDict[i] = myDict[i]! + 1
-            print(myDict)
+            //print(myDict)
             queue.async {
                 
                 semaphore.wait()
@@ -130,11 +131,12 @@ class StoriesTableViewController: UITableViewController {
             //defaults.integer(forKey: materials)
             if (myDict[materials] != 0) {
                 if (defaults.value(forKey: materials) as? Int == nil) {
-                    print(materials)
+                    //print(materials)
                 }
+                print ("number: ", number)
                 let oldNum = defaults.integer(forKey: materials)
-                let newNum = number + oldNum
-                print("Material: , Number:", materials,newNum)
+                let newNum = 1 + oldNum
+                //print("Material: , Number:", materials,newNum)
                 defaults.set(newNum, forKey: materials)
             }
         }
@@ -310,10 +312,22 @@ class StoriesTableViewController: UITableViewController {
                 textField.placeholder = self.quantityAlerts[indexPath.row].textBoxLabel
                 textField.keyboardType = UIKeyboardType.numberPad
             }
-            quantityAlert.addAction(UIAlertAction(title: "Enter", style: .default, handler: nil))
+            quantityAlert.addAction(UIAlertAction(title: "Enter", style: .default, handler: {[weak quantityAlert] (_) in let textField = quantityAlert?.textFields![0]
+                self.multiple = Int((textField?.text!)!) ?? 1
+                let current = self.itemList[indexPath.section][indexPath.row].title
+                let oldNum = self.defaults.integer(forKey: current)
+                let newNum = self.multiple + oldNum - 1
+                //print("Material: , Number:", materials,newNum)
+                self.defaults.set(newNum, forKey: current)
+            }))
+            //multiple = textField.text
             self.present(quantityAlert, animated: true)
         }
         ourArray.append(self.itemList[indexPath.section][indexPath.row].title)
+    }
+    
+    func gettingMultiple() {
+        
     }
     
     

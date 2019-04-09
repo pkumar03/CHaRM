@@ -21,13 +21,13 @@ class ProfileViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         for (mats, _) in myDict {
-            print(mats)
+            //print(mats)
             let temp = UserDefaults.standard.integer(forKey: mats)
             if (temp != 0 ) {
                 let newStr = mats + ": " + String(temp)
                 newArray.append(newStr)
             }
-            print("Material and Number: ", mats, temp)
+            //print("Material and Number: ", mats, temp)
             
         }
     }
