@@ -5,6 +5,24 @@ import UIKit
 import FirebaseDatabase
 import FirebaseCore
 
+extension NSMutableAttributedString {
+    @discardableResult func bold(_ text: String) -> NSMutableAttributedString {
+        let attrs: [NSAttributedString.Key: Any] = [.font: UIFont(name: "HelveticaNeue-Bold", size: 15)!]
+        let boldString = NSMutableAttributedString(string:text, attributes: attrs)
+        append(boldString)
+        
+        return self
+    }
+    
+    @discardableResult func normal(_ text: String) -> NSMutableAttributedString {
+        let attrs: [NSAttributedString.Key: Any] = [.font: UIFont(name: "HelveticaNeue", size: 15)!]
+        let normal = NSAttributedString(string: text, attributes: attrs)
+        append(normal)
+        
+        return self
+    }
+}
+
 var paintIndv = 0
 var myDict = ["Batteries" : 0, "Bikes" : 0, "Paint" : 0, "Aluminum Cans" : 0, "Books" : 0, "Bulbs" : 0, "Cardboard" : 0, "Clothing" : 0, "Electronics" : 0, "Furniture in usable condition" : 0, "Glass bottles and jars" : 0, "Household Chemicals" : 0, "Household fats or oil or grease" : 0, "Household items in usable condition" : 0, "Ink Printer Cartridges" : 0, "Large Appliances" : 0, "Mattresses" : 0, "Metal" : 0, "Musical Instruments" : 0, "Paper" : 0, "Plastic food containers" : 0, "Plastic or grocery bags" : 0, "Political signs" : 0, "Propane Tanks" : 0, "Smoke Detectors" : 0, "Sports equipment" : 0, "Styrofoam" : 0, "Textiles" : 0, "Thermometers" : 0, "Tires" : 0, "Toilets" : 0, "Waxed Cartons" : 0, "Wine Corks" : 0]
 
@@ -35,12 +53,12 @@ class StoriesTableViewController: UITableViewController {
         do {
             try addZipCode()
         } catch  zipCodeError.wrongLength {
-            let wrongLengthAlert = UIAlertController(title: "Please enter 5-digit zip code", message: "", preferredStyle: .alert)
+            let wrongLengthAlert = UIAlertController(title: "Please enter a 5-digit zip code", message: "", preferredStyle: .alert)
             wrongLengthAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(wrongLengthAlert, animated: true)
             print("Please enter 5-digit zip code")
         } catch zipCodeError.wrongChars {
-            let wrongCharsAlert = UIAlertController(title: "Please enter zip code with numbers only", message: "", preferredStyle: .alert)
+            let wrongCharsAlert = UIAlertController(title: "Please enter zip codes with numbers only", message: "", preferredStyle: .alert)
             wrongCharsAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(wrongCharsAlert, animated: true)
             print("Please enter zip code with numbers only")
@@ -48,6 +66,10 @@ class StoriesTableViewController: UITableViewController {
             print("Unexpected error: please check that you entered zip code correctly")
         }
         addMaterials()
+        let submitted = UIAlertController(title: "Thank you for recycling at CHaRM", message: "",  preferredStyle: .alert)
+        submitted.addAction(UIAlertAction(title: "OK", style: .default))
+        
+        self.present(submitted, animated: true, completion: nil)
     }
     
     func addZipCode() throws {
@@ -125,9 +147,39 @@ class StoriesTableViewController: UITableViewController {
         //            }
     }
     
-    
+    @IBOutlet weak var itemInfo: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let itemInfoText = NSMutableAttributedString()
+        itemInfoText
+            .bold("Paint: ")
+            .normal("latex and oil base  (First 50 pounds are free, each additional pound is $.25)")
+            .bold("\nHousehold chemicals: ")
+            .normal("pesticides, herbicides, household cleaners, etc. (The first 50 pounds are free, each additional pound is $.25)")
+            .bold("\nElectronics: ")
+            .normal("TVs and monitors are$15, and the TV must be intact. Electronics include all items that required electricity")
+            .bold("\nTires: ")
+            .normal("First two no charge, each additional $2 unless a council member event. YOU must unload these")
+            .bold("\nMattresses: ")
+            .normal("$10 per set")
+            .bold("\nPropane Tanks: ")
+            .normal("$10")
+            .bold("\nLarge Appliances : ")
+            .normal("refrigerators, stoves, dishwashers , dehumidifiers, and AC units are $10")
+            .bold("\nThermometers: ")
+            .normal("$5")
+            .bold("\nSmoke Detectors: ")
+            .normal("$5")
+            .bold("\nBulbs: ")
+            .normal(" First 2, 4ft & 6ft Fluorescents are free, each additional are $.50")
+            .bold("\nCFL Bulbs: ")
+            .normal("First 5 are free, each additional are $.50")
+            .bold("\nToilets: ")
+            .normal("Seats and all hardware must be removed")
+        
+        itemInfo.attributedText = itemInfoText
         zipCode.borderStyle = UITextField.BorderStyle.roundedRect
         zipCode.keyboardType = UIKeyboardType.numberPad
         tableView.allowsMultipleSelectionDuringEditing = true
