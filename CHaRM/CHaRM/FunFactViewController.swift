@@ -10,18 +10,23 @@ import UIKit
 
 class FunFactViewController: UIViewController {
     
-    @IBAction func newFactAction(sender: UIButton) {
-//        println"hello"
-        
-    }
+    @IBOutlet weak var funFactLabel: UILabel!
+    
+    let funFactArray = ["1st Fact", "2nd Fact", "3rd Fact", "4th Fact", "5th Fact"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        funFactLabel.text = "0th Fact"
     }
     
-
+    
+    @IBAction func buttonAction(_ sender: Any) {
+        let j = Int.random(in: 0...funFactArray.count - 1)
+        funFactLabel.text = funFactArray[j]
+    }
+    
     /*
     // MARK: - Navigation
 
