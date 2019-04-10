@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class FifthViewController: UIViewController {
 
@@ -27,6 +28,16 @@ class FifthViewController: UIViewController {
         
         //paintLabel.text =  String(paintNum)
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func logOutAction(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+        }
+        catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
+        self.performSegue(withIdentifier: "logOutToHome", sender: self)
     }
     
 

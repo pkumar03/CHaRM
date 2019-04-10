@@ -290,7 +290,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="iHv-ic-lCB" kind="presentation" id="wWf-iv-jSI"/>
+                                    <action selector="logOutAction:" destination="YjG-CB-uRY" eventType="touchUpInside" id="C2u-HB-OqS"/>
+                                    <segue destination="9JV-4I-ArF" kind="presentation" identifier="logOutToHome" id="DMS-8J-t6G"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bpr-6j-4Zu">
@@ -480,7 +481,7 @@
         <!--Start Screen-->
         <scene sceneID="Aog-qJ-SW0">
             <objects>
-                <viewController title="Start Screen" id="9JV-4I-ArF" sceneMemberID="viewController">
+                <viewController title="Start Screen" id="9JV-4I-ArF" customClass="StartScreenViewController" customModule="CHaRM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KO1-HV-TuO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -512,7 +513,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="49e-Tb-3d3" kind="presentation" id="eIr-EB-x6W"/>
+                                    <segue destination="49e-Tb-3d3" kind="presentation" identifier="alreadyLoggedIn" id="eIr-EB-x6W"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tll-gQ-s3j">
@@ -543,6 +544,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="n83-sx-Vhl"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <segue destination="49e-Tb-3d3" kind="presentation" id="iNU-Af-fEn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1D-SR-Oe6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -759,7 +763,8 @@
         <image name="recyleIcon" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="npn-ai-GXv"/>
-        <segue reference="2NH-Yv-2wg"/>
+        <segue reference="6at-k2-9X5"/>
+        <segue reference="eIr-EB-x6W"/>
+        <segue reference="EyF-lR-3Tr"/>
     </inferredMetricsTieBreakers>
 </document>
