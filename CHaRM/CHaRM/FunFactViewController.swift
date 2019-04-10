@@ -12,13 +12,13 @@ class FunFactViewController: UIViewController {
     
     @IBOutlet weak var funFactLabel: UILabel!
     
-    let funFactArray = ["1st Fact", "2nd Fact", "3rd Fact", "4th Fact", "5th Fact"]
+    let funFactArray = ["1st Fact", "2nd Fact", "3rd Fact", "4th Fact", "5th Fact"] //need to add some fun facts
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        funFactLabel.text = "0th Fact"
+        funFactLabel.text = "Since opening 4 years ago, CHaRM has collected enough household hazardous material to fill 40 Olympic size pools!"
     }
     
     
