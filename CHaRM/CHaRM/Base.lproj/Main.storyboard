@@ -319,10 +319,10 @@
             </objects>
             <point key="canvasLocation" x="2508" y="0.44977511244377816"/>
         </scene>
-        <!--Recyling History-->
+        <!--Recycling History-->
         <scene sceneID="OA9-cA-mJG">
             <objects>
-                <tableViewController title="Recyling History" id="HAz-1g-0bG" customClass="ProfileViewController" customModule="CHaRM" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Recycling History" id="HAz-1g-0bG" customClass="ProfileViewController" customModule="CHaRM" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kFd-AB-qvU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -342,7 +342,7 @@
                             <outlet property="delegate" destination="HAz-1g-0bG" id="aId-rp-h5N"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Recyling History" id="PxX-cM-ndI">
+                    <navigationItem key="navigationItem" title="Recycling History" id="PxX-cM-ndI">
                         <barButtonItem key="leftBarButtonItem" title="Back" image="backRH" id="nSx-Gj-5RS">
                             <color key="tintColor" red="0.33057382670000002" green="0.85717617270000002" blue="0.33604776139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -745,8 +745,7 @@
         <image name="recyleIcon" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9ov-7P-7Tm"/>
         <segue reference="lIl-at-HHt"/>
-        <segue reference="2NH-Yv-2wg"/>
+        <segue reference="DMS-8J-t6G"/>
     </inferredMetricsTieBreakers>
 </document>
