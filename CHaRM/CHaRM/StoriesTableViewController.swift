@@ -67,7 +67,7 @@ class StoriesTableViewController: UITableViewController {
         }
         addMaterials()
         let submitted = UIAlertController(title: "Thank you for recycling at CHaRM", message: "",  preferredStyle: .alert)
-        submitted.addAction(UIAlertAction(title: "OK", style: .default))
+        submitted.addAction(UIAlertAction(title: "OK", style: .default, handler:  { action in self.performSegue(withIdentifier: "submitSegue", sender: self) }))
         
         self.present(submitted, animated: true, completion: nil)
     }

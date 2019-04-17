@@ -166,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-743.20000000000005" y="-656.22188905547227"/>
+            <point key="canvasLocation" x="-796" y="-712"/>
         </scene>
         <!--Recycle-->
         <scene sceneID="fyV-ts-O6b">
@@ -257,6 +257,7 @@
                     <connections>
                         <outlet property="itemInfo" destination="oHv-t7-hGN" id="IcA-mm-GUj"/>
                         <outlet property="zipCode" destination="yF3-NB-vAp" id="5PF-pf-QzI"/>
+                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="submitSegue" animates="NO" id="abw-wG-XXB"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQ6-W1-Upw" userLabel="First Responder" sceneMemberID="firstResponder"/>
