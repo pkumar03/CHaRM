@@ -2,6 +2,7 @@
 CHaRM Application: an iOS application for the CHaRM facility in Atlanta that will allow users to log the recyclable materials they bring in to the facility, donate to Live Thrive Atlanta, view their personal recycling history, and see general information about the facility.
 
 JID 8306
+
 Eugene Ahn, Annette Cochran, Pranay Kumar, Adya Modi, Arianna Pathammavong
 
 
@@ -45,7 +46,7 @@ For running in XCode simulator:
 
 ## *Installation of Actual Application:*
 
-Building the application in XCode is sufficient to install the application. 
+- Building the application in XCode is sufficient to install the application. 
 
 
 
