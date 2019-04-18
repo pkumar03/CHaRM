@@ -42,19 +42,19 @@ Building the application in XCode is sufficient to install the application.
 
 Steps to publish in App Store:
 
-- To give users access to the application, it must be published to the Apple App Store. The steps below detail this process.   
-- Create Valid Apple developer program account
-- Sign in to App Store Connect. App Store Connect is a tool used to submit and manage applications to the App Store. 
-- Add/Edit users for testing
-- Submit a request to access the App Store Connect API
-- Generate an API key in order to add application to App Store Connect
-- Add a new application
-- Enter application information
-- Add export compliance information
-- Create a new version of application to publish
-- Upload, view, and submit builds
-- Submit application for review: https://developer.apple.com/app-store/review/
-- If review is approved, application will be published to app store
+1. To give users access to the application, it must be published to the Apple App Store. The steps below detail this process. 
+2. Create Valid Apple developer program account
+3. Sign in to App Store Connect. App Store Connect is a tool used to submit and manage applications to the App Store. 
+4. Add/Edit users for testing
+5. Submit a request to access the App Store Connect API
+6. Generate an API key in order to add application to App Store Connect
+7. Add a new application
+8. Enter application information
+9. Add export compliance information
+10. Create a new version of application to publish
+11. Upload, view, and submit builds
+12. Submit application for review: https://developer.apple.com/app-store/review/
+13. If review is approved, application will be published to app store
 
 Further instructions can be found here: https://help.apple.com/app-store-connect/#/dev34e9bbb5a
 
