@@ -23,21 +23,21 @@ v1.0.0
 
 # Install Guide
 
-Prerequisites: 
+*Prerequisites:* 
 macOS device running Mojave (10.14.1) or higher and XCode version 10.1 or higher
 
-Dependent Libraries: 
+*Dependent Libraries:* 
 Application is not dependent on any libraries
  
-Download Instructions:
+*Download Instructions:*
 Clone or download the CHaRM repository to get a local copy on a macOS device
 
-Build Instructions:
+*Build Instructions:*
 For running in XCode simulator:
 1. Open the CHaRM.xcworkspace file with XCode
 2. Go to Product in the menu bar, under which there is an action labeled build. Click on build. Alternatively, use the keyboard shortcut ⌘ + B to build the application.
 
-Installation of Actual Application:
+*Installation of Actual Application:*
 Building the application in XCode is sufficient to install the application. 
 
 Steps to publish in App Store:
@@ -58,7 +58,8 @@ Steps to publish in App Store:
 
 Further instructions can be found here: https://help.apple.com/app-store-connect/#/dev34e9bbb5a
 
-Run Instructions:
+*Run Instructions:*
+
 For use in XCode Simulator:
 - Either press the play button in the top left corner or navigate to Product in the menu bar and then click Run. The keyboard shortcut to run the application is ⌘ + R. 
 - The simulator will launch and run the application
@@ -68,6 +69,6 @@ For use on iPhone:
 - The user must search for and download the CHaRM application
 - Click on the application icon to run it
 
-Troubleshooting:
+*Troubleshooting:*
 
 We have not run into any issues while installing the application on macOS devices. However, if any issues were to arise during the installation process, the most likely fix would be to clean the build folder and rebuild the application. The option to clean the build folder is under Product in the menu bar or can be performed with the keyboard shortcut ⇧+ ⌘ + K.
