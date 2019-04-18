@@ -3,7 +3,7 @@ CHaRM Application
 Eugene Ahn, Annette Cochran, Pranay Kumar, Adya Modi, Arianna Pathammavong
 
 
-Release Notes
+# Release Notes
 
 v1.0.0
 
