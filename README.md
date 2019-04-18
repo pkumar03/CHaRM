@@ -21,7 +21,7 @@ Since this is the initial release, the bug fixes were all done during the develo
 Known Bugs and Defects
 All features requested by the client and promised by the development team were implemented in the application. A known bug is that, when a user is selecting items they brought to recycle, if they deselect an item it will still appear in their saved history. Another defect currently is that users do not have the ability to reset their account password through the application interface. 
 
-Install Guide
+# Install Guide
 
 Prerequisites: macOS device running Mojave (10.14.1) or higher and XCode version 10.1 or higher
 
