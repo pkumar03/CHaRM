@@ -7,7 +7,7 @@ Eugene Ahn, Annette Cochran, Pranay Kumar, Adya Modi, Arianna Pathammavong
 
 v1.0.0
 
-New Features
+*New Features*
 Create account and login functionality
 Donate through PayPal
 Record materials brought to recycle
@@ -15,10 +15,10 @@ View total recycling material brought in database
 View personal recycling history
 View fun facts about the benefits of recycling
 
-Bug Fixes Since Last Release
+*Bug Fixes Since Last Release*
 Since this is the initial release, the bug fixes were all done during the development and testing of this application. An example of a bug that was fixed during development is the quantity of materials not properly updating in a user’s recycling history after they submitted materials on the recycle page. Another bug that was fixed was the materials not updating correctly in the database due to a race condition, which was fixed by modifying how the application uses multithreading. A bug that prevented users from logging out properly was also fixed during testing. Smaller bugs, such as verifying that user input was valid in the recycle and account creation pages, were also fixed during development.
 
-Known Bugs and Defects
+*Known Bugs and Defects*
 All features requested by the client and promised by the development team were implemented in the application. A known bug is that, when a user is selecting items they brought to recycle, if they deselect an item it will still appear in their saved history. Another defect currently is that users do not have the ability to reset their account password through the application interface. 
 
 # Install Guide
