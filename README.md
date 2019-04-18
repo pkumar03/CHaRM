@@ -24,20 +24,25 @@ v1.0.0
 # Install Guide
 
 *Prerequisites:* 
+
 macOS device running Mojave (10.14.1) or higher and XCode version 10.1 or higher
 
 *Dependent Libraries:* 
+
 Application is not dependent on any libraries
  
 *Download Instructions:*
+
 Clone or download the CHaRM repository to get a local copy on a macOS device
 
 *Build Instructions:*
+
 For running in XCode simulator:
 1. Open the CHaRM.xcworkspace file with XCode
 2. Go to Product in the menu bar, under which there is an action labeled build. Click on build. Alternatively, use the keyboard shortcut ⌘ + B to build the application.
 
 *Installation of Actual Application:*
+
 Building the application in XCode is sufficient to install the application. 
 
 Steps to publish in App Store:
