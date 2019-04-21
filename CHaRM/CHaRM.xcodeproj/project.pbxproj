@@ -25,6 +25,7 @@
 		44B751ED224D1EE7001FB519 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B751EC224D1EE7001FB519 /* ProfileViewController.swift */; };
 		510053C521EFE1AC00C56AB9 /* StoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510053C421EFE1AC00C56AB9 /* StoriesTableViewController.swift */; };
 		B6A7562C649D6382498155F2 /* Pods_CHaRMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4C1CDDBD8AEE9CCE272927 /* Pods_CHaRMTests.framework */; };
+		CEC7B645226645410097AAC3 /* charmicon1.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC7B644226645400097AAC3 /* charmicon1.png */; };
 		F4CBC108C2407E76D86DEE07 /* Pods_CHaRMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 851F2E2A0A899B837DAAD952 /* Pods_CHaRMUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 		851F2E2A0A899B837DAAD952 /* Pods_CHaRMUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CHaRMUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED92282B2CDA6D32D0C35B1 /* Pods-CHaRMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHaRMTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CHaRMTests/Pods-CHaRMTests.release.xcconfig"; sourceTree = "<group>"; };
 		C0AA030FA9C35D71CF1C06DA /* Pods_CHaRM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CHaRM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEC7B644226645400097AAC3 /* charmicon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = charmicon1.png; path = ../../../charmicon1.png; sourceTree = "<group>"; };
 		E72FCB94048230F34774453C /* Pods-CHaRMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHaRMUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CHaRMUITests/Pods-CHaRMUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EB4C1CDDBD8AEE9CCE272927 /* Pods_CHaRMTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CHaRMTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -158,6 +160,7 @@
 				3AC3023621E8280100F9F96C /* Assets.xcassets */,
 				3AC3023821E8280100F9F96C /* LaunchScreen.storyboard */,
 				3AC3023B21E8280100F9F96C /* Info.plist */,
+				CEC7B644226645400097AAC3 /* charmicon1.png */,
 				3A5C7E3B21FA270A00583C0B /* GoogleService-Info.plist */,
 				3A181D6F21EA7EE9001CCAB4 /* LoginViewController.swift */,
 				3A9C976921EFB15600FD74FB /* SignUpViewController.swift */,
@@ -308,6 +311,7 @@
 			files = (
 				3AC3023A21E8280100F9F96C /* LaunchScreen.storyboard in Resources */,
 				3A5C7E3C21FA270A00583C0B /* GoogleService-Info.plist in Resources */,
+				CEC7B645226645410097AAC3 /* charmicon1.png in Resources */,
 				3AC3023721E8280100F9F96C /* Assets.xcassets in Resources */,
 				3AC3023521E8280000F9F96C /* Main.storyboard in Resources */,
 			);
